@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Events\CreateEventItemEvent;
+use App\Listeners\LogCreateEventListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;

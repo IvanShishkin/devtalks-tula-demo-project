@@ -14,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('tasks')->group(function () {
+    Route::get('/get', [\App\Http\Controllers\TaskController::class, 'get']);
+    Route::get('/all', [\App\Http\Controllers\TaskController::class, 'all']);
+    Route::post('/create', [\App\Http\Controllers\TaskController::class, 'create']);
+    Route::post('/update', [\App\Http\Controllers\TaskController::class, 'update']);
+});
+
+
+Route::any('test', function () {
+
+    $dto = new \App\DTO\CreateTaskDTO(title: 'Title', description: '123123123');
+
+    dd($dto);
 });

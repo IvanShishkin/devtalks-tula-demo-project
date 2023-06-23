@@ -43,6 +43,7 @@ return [
     */
 
     'debug' => (bool) env('APP_DEBUG', false),
+    'email_alert' => env('EMAIL_ALERT'),
 
     /*
     |--------------------------------------------------------------------------
